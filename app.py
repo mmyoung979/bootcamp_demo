@@ -27,6 +27,3 @@ def cats():
             url = cat["url"]
             html += f"<img src={url}></img>"
         return html
-
-    # Return the type of request if not GET request
-    return {"message": f"{request.method} request"}
