@@ -22,7 +22,11 @@ def cats():
         response = requests.get(url).json()
 
         # Parse and return API results
-        return [cat["url"] for cat in response]
+        html = ""
+        for cat in response:
+            url = cat["url"]
+            html += f"<img src={url}></img>"
+        return html
 
     # Return the type of request if not GET request
     return {"message": f"{request.method} request"}
